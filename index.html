@@ -3,6 +3,52 @@
     div {
         display: block;
         margin: auto;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: small;
+    }
+
+    a{
+        color: #000;
+        text-decoration: none;
+        padding: 8px;
+    }
+
+    #nav {
+        display: flex;
+        width: 100%;
+        margin-top: 15px;
+        color: #000;
+        opacity: .8;
+    }
+
+    #top-left {
+        display: flex;
+        flex: 1;
+        margin-left: 10px;
+        justify-content: flex-start;
+    }
+
+    #top-right {
+        display: flex;
+        flex: 2;
+        margin-right: 10px;
+        justify-content: flex-end;
+    }
+
+    .material-icons {
+        margin-top: -5px;
+        color: #000;
+        opacity: .8;
+    }
+
+    #sign-in {
+        margin-left: 10px;
+        height: 30px;
+        width: 65px;
+        color: white;
+        outline: none; 
+        border: 1px solid #4285f4;
+        background: linear-gradient(#4387fd,#4683ea);
     }
 
     #google-logo {
@@ -27,8 +73,18 @@
 </style>
 <html>
     <header>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <div id="nav">
-            
+            <div id="top-left">
+                <a href="https://about.google/?fg=1&utm_source=google-US&utm_medium=referral&utm_campaign=hp-header">About</a>
+                <a href="https://store.google.com/US/?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=en-US">Store</a>
+            </div>
+            <div id="top-right">
+                <a href="http://www.gmail.com/">Gmail</a>
+                <a href="https://www.google.com/imghp?hl=en&tab=ri&ogbl">Images</a>
+                <a href="https://www.google.com/intl/en/about/products?tab=rh"><i class="material-icons">apps</i></a>
+                <button type="button" id="sign-in">Sign in</button>
+            </div>
         </div>
     </header>
     <body>
