@@ -53,27 +53,45 @@
 
     #google-logo {
         display: block;
-        margin-top: 200px;
+        margin-top: 145px;
+        margin-bottom: 25px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    #search-bar {
-        width: 600px;
-        height: 40px;
+    #search-container {
+        display: flex;
+        max-width: 580px;
+        height: 45px;
+        border: 1px solid rgba(0,0,0,.15);
         border-radius: 30px;
-        display: block;
-        margin-top: 30px;
-        margin-left: auto;
-        margin-right: auto;
-        border-color: rgba(0,0,0,.15);
-        border-width: 1px;
+        align-items: center;
+    }
+
+    #search-logo {
+        justify-content: flex-start;
+        padding: 0px 15px;
+        color: rgba(0,0,0,.35);
+    }
+
+    #search-bar {
+        flex: 100%;
+        justify-content: flex-start;
+        border: none;
+        outline: none;
+    }
+
+    #voice {
+        padding: 0px 20px;
+        width: 14px;
+        height: 20px;
     }
 
 </style>
 <html>
     <header>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <div id="nav">
             <div id="top-left">
                 <a href="https://about.google/?fg=1&utm_source=google-US&utm_medium=referral&utm_campaign=hp-header">About</a>
@@ -90,7 +108,12 @@
     <body>
         <div>
             <img id="google-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="colorful google logo">
-            <input type="text" id="search-bar" name="search-bar">
+            <div id="search-container">
+                <i id="search-logo" class="fas fa-search"></i>
+                <input type="text" id="search-bar" name="search-bar">
+                <img id="voice" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGcAAACUCAMAAAC5mcd8AAAAzFBMVEX///9ChfTqQzX7vAU0qFM0fvSevPlHrmEwp1A7qljqQTL7uQA9g/T/+e/97u77wTjrUUbqPS7pOSnpNSTpLxv8wAApevMpqlTt8v5Oi/V0ofbb5fxqm/bvfHX51NLoJgz74uH+9/fucmrA0vt9p/dbk/WStPjk7P2sxfrxk43taF/H1/v+8dcbdfPsXFHym5b2v7z5shX1sq74ysdgmk90kkyBi0qPiEz8x1P914380HTwhX78zGL7vCLzpJ/94rP936X4pwD+6cJIn0yZRqvuAAAEeklEQVRoge2aa3faOBCGhVmzqSEG2yrFgG/cAm4KrGm7STZhe/n//2mluCwaSTYydk6/6P2UY494MqN3ZA5jhKrobt5ZLP2Wv1x05neVVlbQaO33TLPXoqJ/+OvRW1A6rV+Mk3pma9U4ae6bLVGmP28WMx5KKFTDcYOUUatXgCHVazVWu0kJhoImzWDu/DIMAfnNWHxZjiGgZROYlcxoUOaqPmZS5DRWw/pbdGFzTltUF/NRJR2S0MeanKlKOiShaT3MnVo6JKF63u5cNlsus1OLo1i2uoUbKVKo6hxzSs2Tq1YLzStw6jyJ1qo2IEZY1+Ao262m4TRHczRHczRHczRHczRHczRHczRHczRHczRHczRHc34D5xaqMU5iA6GHPqvHxjgbY8AoRf02o+4TDK7xu/I/nnWWs0UPgPMMgxWnP1T8BChwjLOcGXrusqA+DK7xu/8WcAL0VMYZ+cocn5tjDCyG427QI+C8cIYbK89luPlzYrAc74j+BZzu/ZVG4G0Qs2UzvAz9gJwfXOGU52Zc2fYe4BzQPeRwDYQWinPABbdu47IcN0boheW0X7j4ySclzid+ygS2x7DIFdCo7S5nBDUn8C5AdsRiSJsiznDdb9yKkYoTTH44l8Ht2ZFL0AjtB26FiuXEWVYK7IYP5NL9S3nh0PgSyBTe3YBls4yYXnyAHN5xCC3LQab4+gF0m5O+XvwGC8cfCWSLSkHmUpic2hZwG85er8IOkiU0KimdORYHtEfMYgwvzi/DwkkSoi9VyO3dk71KYcPm+VU2oXCShEi/+hJSz/RlU+ANMPWpbESQIxymueb+kHvvaSh/GymEGMNNTnceOVBftpzktPCHptmjMs2hvyiYaA8ciNn8f+eWT0hWOarRZL0aT6fT8Wo9KZrP77h0Ivt871mpckoKI4hxA+YmZ20iieeUZLsW5OCYvc0nVLRFl5RwmwPTIQnx+XSvAiVbF2IMx4YRXA+1339PE/lnlWFSHoOPXMhtn8MY7rYqKBkI2YifAR5D7/+iQflxrqzY4PaGpBOKYUyzvmLIc8PbV8DsPUvA7GSBfQ5DeyxQrV0SRDwl/1og6nQqnDHElq5aSnuX3xpaDlsenG8RsQAbjFNJjTmFKRZqRjCHonhqbjabPHsvKCeFgScYwGAfB6IeuwKGkqI0K9qnJEsjGaXAAyc9fZetMRwczbJYiI6zWYSlFCPaiB/OaoOly2j5ME53+0MYx3Ych4f9LsVYWjAVTAkoZ3kO3XHr9a/iQHwRQ7+siN6BunhfONWkysTGriRHsedQKGk6dbnO5YY7aSYeIqqKZsoUWrsrU3Ldku6UKQ4u2kGUhYO4GoboMKhIsvCg8EQrVeZWcJ7lVS0ZSzLkh5cgJzKup1AdZlFZ4+cQL5pdVzFW9jH1sFNUQMvBXnoseKBVVZylAw+7fF6Oi71BKjnHa8gOs82W/vsnWYa13WRhQ5lA/fnz85evf1N9/fL554e3QOScm5sPJ93cvHtDzh9naY7maI7maI7maI7m1OP8B5+oeOqYu8szAAAAAElFTkSuQmCC">
+            </div>
+            
             
         </div>
     </body>
