@@ -13,6 +13,10 @@
         padding: 8px;
     }
 
+    a:hover {
+        text-decoration: underline;
+    }
+
     #nav {
         display: flex;
         width: 100%;
@@ -31,30 +35,39 @@
     #top-right {
         display: flex;
         flex: 2;
-        margin-right: 10px;
+        margin-right: 20px;
         justify-content: flex-end;
     }
 
     .material-icons {
         margin-top: -5px;
         color: #000;
-        opacity: .8;
+        opacity: .7;
+    }
+
+    .material-icons:hover {
+        opacity: 1;
     }
 
     #sign-in {
         margin-left: 10px;
         height: 30px;
         width: 65px;
-        color: white;
-        outline: none; 
+        opacity: 1;
+        color: rgba(256, 256, 256, 1);
+        font-weight: bold;
+        outline: none;
+        border-radius: 2px;
         border: 1px solid #4285f4;
-        background: linear-gradient(#4387fd,#4683ea);
+        background: #1e6df5;
     }
 
     #google-logo {
         display: block;
-        margin-top: 145px;
-        margin-bottom: 25px;
+        height: 100px;
+        width: 297px;
+        margin-top: 99px;
+        margin-bottom: 23px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -62,10 +75,15 @@
     #search-container {
         display: flex;
         max-width: 580px;
-        height: 45px;
-        border: 1px solid rgba(0,0,0,.15);
+        height: 43px;
+        border: 1px solid rgba(0,0,0,.1);
         border-radius: 30px;
         align-items: center;
+    }
+
+    #search-container:hover{
+        box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+        border-color: rgba(223,225,229,0);
     }
 
     #search-logo {
@@ -79,12 +97,69 @@
         justify-content: flex-start;
         border: none;
         outline: none;
+        font-size: 16px;
     }
 
     #voice {
         padding: 0px 20px;
         width: 14px;
         height: 20px;
+    }
+
+    #lower-buttons {
+        display: flex;
+        width: 285px;
+        height: 37px;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-between;
+        opacity: .8;
+    }
+
+    #g-search, #lucky {
+        width: 135px;
+        border-style: none;
+        border-radius: 5px;
+        outline: rgba(0,0,0,.1);
+        color: rgba(0,0,0,.85);
+    }
+
+    #g-search:hover, #lucky:hover {
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        background-color: #f8f8f8;
+        border: 1px solid #c6c6c6;
+        color: rgba(0,0,0,1);
+    }
+
+    #footer {
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        height: 40px;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #f2f2f2;
+        border: 1px solid rgba(0,0,0,.05);
+    }
+
+    #b-right {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        margin-right: 20px;
+        font-size: 14px;
+        opacity: 0.6;
+    }
+
+    #b-left {
+        display: flex;
+        flex: 2;
+        justify-content: flex-start;
+        margin-left: 20px;
+        font-size: 14px;
+        opacity: 0.6;
     }
 
 </style>
@@ -107,13 +182,29 @@
     </header>
     <body>
         <div>
-            <img id="google-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="colorful google logo">
+            <img id="google-logo" src="https://cdn.freebiesupply.com/images/large/2x/google-logo-transparent.png">
             <div id="search-container">
                 <i id="search-logo" class="fas fa-search"></i>
                 <input type="text" id="search-bar" name="search-bar">
                 <img id="voice" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGcAAACUCAMAAAC5mcd8AAAAzFBMVEX///9ChfTqQzX7vAU0qFM0fvSevPlHrmEwp1A7qljqQTL7uQA9g/T/+e/97u77wTjrUUbqPS7pOSnpNSTpLxv8wAApevMpqlTt8v5Oi/V0ofbb5fxqm/bvfHX51NLoJgz74uH+9/fucmrA0vt9p/dbk/WStPjk7P2sxfrxk43taF/H1/v+8dcbdfPsXFHym5b2v7z5shX1sq74ysdgmk90kkyBi0qPiEz8x1P914380HTwhX78zGL7vCLzpJ/94rP936X4pwD+6cJIn0yZRqvuAAAEeklEQVRoge2aa3faOBCGhVmzqSEG2yrFgG/cAm4KrGm7STZhe/n//2mluCwaSTYydk6/6P2UY494MqN3ZA5jhKrobt5ZLP2Wv1x05neVVlbQaO33TLPXoqJ/+OvRW1A6rV+Mk3pma9U4ae6bLVGmP28WMx5KKFTDcYOUUatXgCHVazVWu0kJhoImzWDu/DIMAfnNWHxZjiGgZROYlcxoUOaqPmZS5DRWw/pbdGFzTltUF/NRJR2S0MeanKlKOiShaT3MnVo6JKF63u5cNlsus1OLo1i2uoUbKVKo6hxzSs2Tq1YLzStw6jyJ1qo2IEZY1+Ao262m4TRHczRHczRHczRHczRHczRHczRHczRHczRHczRHc34D5xaqMU5iA6GHPqvHxjgbY8AoRf02o+4TDK7xu/I/nnWWs0UPgPMMgxWnP1T8BChwjLOcGXrusqA+DK7xu/8WcAL0VMYZ+cocn5tjDCyG427QI+C8cIYbK89luPlzYrAc74j+BZzu/ZVG4G0Qs2UzvAz9gJwfXOGU52Zc2fYe4BzQPeRwDYQWinPABbdu47IcN0boheW0X7j4ySclzid+ygS2x7DIFdCo7S5nBDUn8C5AdsRiSJsiznDdb9yKkYoTTH44l8Ht2ZFL0AjtB26FiuXEWVYK7IYP5NL9S3nh0PgSyBTe3YBls4yYXnyAHN5xCC3LQab4+gF0m5O+XvwGC8cfCWSLSkHmUpic2hZwG85er8IOkiU0KimdORYHtEfMYgwvzi/DwkkSoi9VyO3dk71KYcPm+VU2oXCShEi/+hJSz/RlU+ANMPWpbESQIxymueb+kHvvaSh/GymEGMNNTnceOVBftpzktPCHptmjMs2hvyiYaA8ciNn8f+eWT0hWOarRZL0aT6fT8Wo9KZrP77h0Ivt871mpckoKI4hxA+YmZ20iieeUZLsW5OCYvc0nVLRFl5RwmwPTIQnx+XSvAiVbF2IMx4YRXA+1339PE/lnlWFSHoOPXMhtn8MY7rYqKBkI2YifAR5D7/+iQflxrqzY4PaGpBOKYUyzvmLIc8PbV8DsPUvA7GSBfQ5DeyxQrV0SRDwl/1og6nQqnDHElq5aSnuX3xpaDlsenG8RsQAbjFNJjTmFKRZqRjCHonhqbjabPHsvKCeFgScYwGAfB6IeuwKGkqI0K9qnJEsjGaXAAyc9fZetMRwczbJYiI6zWYSlFCPaiB/OaoOly2j5ME53+0MYx3Ych4f9LsVYWjAVTAkoZ3kO3XHr9a/iQHwRQ7+siN6BunhfONWkysTGriRHsedQKGk6dbnO5YY7aSYeIqqKZsoUWrsrU3Ldku6UKQ4u2kGUhYO4GoboMKhIsvCg8EQrVeZWcJ7lVS0ZSzLkh5cgJzKup1AdZlFZ4+cQL5pdVzFW9jH1sFNUQMvBXnoseKBVVZylAw+7fF6Oi71BKjnHa8gOs82W/vsnWYa13WRhQ5lA/fnz85evf1N9/fL554e3QOScm5sPJ93cvHtDzh9naY7maI7maI7maI7m1OP8B5+oeOqYu8szAAAAAElFTkSuQmCC">
             </div>
-            
+            <div id="lower-buttons">
+                <button type="button" id="g-search">Google Search</button>
+                <button type="button" id="lucky">I'm Feeling Lucky</button>
+            </div>
+            <footer id="footer">
+                <div id="b-left">
+                    <a href="https://web.archive.org/web/20191130234759/https://www.google.com/intl/en_us/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1">Advertising</a>
+                    <a href="https://web.archive.org/web/20191130234759/https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1">Business</a>
+                    <a href="https://web.archive.org/web/20191130234759/https://google.com/search/howsearchworks/?fg=1">How Search works</a>
+                </div>
+                <div id="b-right">
+                    <a href="https://web.archive.org/web/20191130234759/https://policies.google.com/privacy?fg=1">Privacy</a>
+                    <a href="https://web.archive.org/web/20191130234759/https://policies.google.com/terms?fg=1">Terms</a>
+                    <a href="https://web.archive.org/web/20191130234759/https://www.google.com/preferences?hl=en">Settings</a>
+                </div>
+                
+            </footer>
             
         </div>
     </body>
